@@ -30,7 +30,7 @@ with open('Output for ' + userInput + '.csv', 'w', encoding='UTF8', newline='') 
         numberOfHighCVE = 0
         nameCVE = []
         # Denne række skal væk
-        print('Machine IP: {}'.format(result['ip_str']))
+        #print('Machine IP: {}'.format(result['ip_str']))
         for item in result['vulns']:
             numberOfCVEs = numberOfCVEs + 1
             cvssScore = float(result['vulns'][item]['cvss'])
