@@ -14,7 +14,7 @@ userInput = input('Enter organisation to scan for vulns: ')
 
 uniqueIPs = []
 uniqueMachines = []
-limits = 5
+limits = input('How many results do you wish to find? One credit can find up to 100 results: ')
 
 
 results = api.search(f'org:{userInput} has_vuln:true', limit=limits)
