@@ -12,8 +12,6 @@ print('Welcome to VULN scanner')
 
 userInput = input('Enter organisation to scan for vulns: ')
 
-uniqueIPs = []
-uniqueMachines = []
 limits = input('How many results do you wish to find? One credit can find up to 100 results: ')
 
 
@@ -29,7 +27,6 @@ with open('Output for ' + userInput + '.csv', 'w', encoding='UTF8', newline='') 
         numberOfCriticalCVE = 0
         numberOfHighCVE = 0
         nameCVE = []
-        # Denne række skal væk
         #print('Machine IP: {}'.format(result['ip_str']))
         for item in result['vulns']:
             numberOfCVEs = numberOfCVEs + 1
@@ -53,7 +50,5 @@ with open('Output for ' + userInput + '.csv', 'w', encoding='UTF8', newline='') 
 
         table.append(tableData)
 
-        # print(tabulate([rows], headers=['IP', 'CVE', 'CVSS',
-        #      "CVE'ER", 'High CVES', 'Critical CVES']))
         writer.writerow(rows)
 print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'))
